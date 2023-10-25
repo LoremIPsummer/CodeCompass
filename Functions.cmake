@@ -144,7 +144,7 @@ function(generate_from_thrift OUTPUT_FILES THRIFT_FILE ADDITIONAL_ARGS)
     OUTPUT ${OUTPUT_FILES}
     COMMAND ${THRIFT_EXECUTABLE} ${ADDITIONAL_ARGS} -o ${CMAKE_CURRENT_BINARY_DIR} ${THRIFT_FILE}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${DIRECTORIES_TO_CREATE}
-    COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT_FILES}  # Touch the output files (create or update)
+    COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT_FILES}
     DEPENDS ${THRIFT_FILE}
     COMMENT "Generating Thrift for ${THRIFT_FILE}"
   )
